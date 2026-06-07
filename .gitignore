@@ -1,3 +1,6 @@
 .claude/
 .superpowers/
-.opencode/.worktrees
+.opencode/
+.worktrees/
+node_modules/
+dist/
