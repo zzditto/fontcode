@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick } from 'vue';
+import { store } from '../../store';
+import { addFontFromUrl, addFontFromFile } from '../../services/customFonts';
 
 const props = defineProps<{
   show: boolean;
@@ -69,8 +71,6 @@ async function handleImport() {
     }
     loading.value = true;
     try {
-      const { addFontFromUrl } = await import('../../services/customFonts');
-      const { store } = await import('../../store');
       const font = await addFontFromUrl(url, nameInput.value.trim() || undefined);
       store.customFonts.push(font);
       store.selectedFont = font.name;
@@ -89,8 +89,6 @@ async function handleImport() {
     }
     loading.value = true;
     try {
-      const { addFontFromFile } = await import('../../services/customFonts');
-      const { store } = await import('../../store');
       const font = await addFontFromFile(file, nameInput.value.trim() || undefined);
       store.customFonts.push(font);
       store.selectedFont = font.name;
