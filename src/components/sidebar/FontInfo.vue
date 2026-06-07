@@ -3,10 +3,17 @@ import { inject, computed } from 'vue';
 import { Card } from 'animal-island-vue';
 import { getFontByName } from '../../data/fonts';
 import { storeKey } from '../../store';
+import type { CustomFont } from '../../services/customFonts';
 
 const store = inject(storeKey)!;
 
-const currentFont = computed(() => getFontByName(store.selectedFont));
+const builtInInfo = computed(() => getFontByName(store.selectedFont));
+
+const customInfo = computed<CustomFont | undefined>(() =>
+  store.customFonts.find((f) => f.name === store.selectedFont)
+);
+
+const currentFont = computed(() => builtInInfo.value ?? customInfo.value ?? null);
 </script>
 
 <template>
@@ -14,14 +21,17 @@ const currentFont = computed(() => getFontByName(store.selectedFont));
     <Card>
       <div class="info-card">
         <div class="info-name">{{ currentFont.name }}</div>
-        <div class="info-row">
-          <span class="info-label">设计者</span>
-          <span class="info-value">{{ currentFont.designer }}</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">许可证</span>
-          <span class="info-value">{{ currentFont.license }}</span>
-        </div>
+        <template v-if="builtInInfo">
+          <div class="info-row">
+            <span class="info-label">设计者</span>
+            <span class="info-value">{{ builtInInfo.designer }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">许可证</span>
+            <span class="info-value">{{ builtInInfo.license }}</span>
+          </div>
+        </template>
+        <div v-else class="custom-tag">自定义字体</div>
       </div>
     </Card>
   </div>
@@ -42,6 +52,17 @@ const currentFont = computed(() => getFontByName(store.selectedFont));
   font-size: 16px;
   font-weight: 700;
   color: #794f27;
+}
+
+.custom-tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 50px;
+  background: rgba(25, 200, 185, 0.12);
+  color: #19c8b9;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .info-row {
