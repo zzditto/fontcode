@@ -137,8 +137,8 @@ export default defineConfig({
 /// <reference types="vite/client" />
 
 declare module '*.vue' {
-  import type { DefineComponent } from 'vue';
-  const component: DefineComponent<object, object, unknown>;
+  import type { Component } from 'vue';
+  const component: Component;
   export default component;
 }
 ```
@@ -160,7 +160,7 @@ npx vite build
 - [ ] **步骤 1：创建 src/store.ts**
 
 ```ts
-import { reactive } from 'vue';
+import { reactive, type InjectionKey } from 'vue';
 
 export interface AppState {
   selectedFont: string;
@@ -168,6 +168,8 @@ export interface AppState {
   theme: 'dark' | 'light';
   activeSnippet: string;
 }
+
+export const storeKey: InjectionKey<AppState> = Symbol('store');
 
 export const store = reactive<AppState>({
   selectedFont: 'Fira Code',
@@ -646,10 +648,10 @@ createApp(App).mount('#app');
 ```vue
 <script setup lang="ts">
 import { provide } from 'vue';
-import { store } from './store';
+import { store, storeKey } from './store';
 import AppLayout from './components/AppLayout.vue';
 
-provide('store', store);
+provide(storeKey, store);
 </script>
 
 <template>
@@ -774,9 +776,9 @@ import FontInfo from './FontInfo.vue';
 <script setup lang="ts">
 import { inject } from 'vue';
 import { fonts } from '../../data/fonts';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
+const store = inject(storeKey)!;
 
 function selectFont(name: string) {
   store.selectedFont = name;
@@ -848,9 +850,9 @@ function selectFont(name: string) {
 ```vue
 <script setup lang="ts">
 import { inject } from 'vue';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
+const store = inject(storeKey)!;
 
 function onInput(e: Event) {
   store.fontSize = Number((e.target as HTMLInputElement).value);
@@ -953,9 +955,9 @@ function onInput(e: Event) {
 ```vue
 <script setup lang="ts">
 import { inject } from 'vue';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
+const store = inject(storeKey)!;
 
 function setTheme(theme: 'dark' | 'light') {
   store.theme = theme;
@@ -967,14 +969,14 @@ function setTheme(theme: 'dark' | 'light') {
     <button
       :class="['theme-btn', { active: store.theme === 'light' }]"
       @click="setTheme('light')"
-      aria-pressed="false"
+      :aria-pressed="store.theme === 'light'"
     >
       ☀️ 浅色
     </button>
     <button
       :class="['theme-btn', { active: store.theme === 'dark' }]"
       @click="setTheme('dark')"
-      aria-pressed="false"
+      :aria-pressed="store.theme === 'dark'"
     >
       🌙 深色
     </button>
@@ -1032,9 +1034,9 @@ function setTheme(theme: 'dark' | 'light') {
 import { inject, computed } from 'vue';
 import { Card } from 'animal-island-vue';
 import { getFontByName } from '../../data/fonts';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
+const store = inject(storeKey)!;
 
 const currentFont = computed(() => getFontByName(store.selectedFont));
 </script>
@@ -1145,9 +1147,9 @@ import CodePreview from './CodePreview.vue';
 <script setup lang="ts">
 import { inject } from 'vue';
 import { snippets } from '../../data/snippets';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
+const store = inject(storeKey)!;
 </script>
 
 <template>
@@ -1214,7 +1216,7 @@ const store = inject<AppState>('store')!;
 
 ```vue
 <script setup lang="ts">
-import { inject, computed, onMounted, watch, ref } from 'vue';
+import { inject, computed } from 'vue';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-typescript';
@@ -1223,11 +1225,9 @@ import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-markup';
 import { snippets } from '../../data/snippets';
 import { getFontByName } from '../../data/fonts';
-import type { AppState } from '../../store';
+import { storeKey } from '../../store';
 
-const store = inject<AppState>('store')!;
-
-const codeRef = ref<HTMLElement | null>(null);
+const store = inject(storeKey)!;
 
 const currentSnippet = computed(() =>
   snippets.find((s) => s.key === store.activeSnippet)
@@ -1261,11 +1261,11 @@ const themeClass = computed(() =>
       fontSize: store.fontSize + 'px',
     }"
   >
-    <pre><code ref="codeRef" class="language-plain" v-html="highlightedCode"></code></pre>
+    <pre><code class="language-plain" v-html="highlightedCode"></code></pre>
   </div>
 </template>
 
-<style scoped>
+<style>
 @import '../../styles/code-themes.css';
 </style>
 ```
