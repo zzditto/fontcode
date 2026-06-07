@@ -245,6 +245,11 @@ async function handleImport() {
   color: #fff;
 }
 
+.tab:focus-visible {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
+}
+
 .modal-body {
   display: flex;
   flex-direction: column;
@@ -326,6 +331,11 @@ async function handleImport() {
   color: #19c8b9;
 }
 
+.btn-cancel:focus-visible {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
+}
+
 .btn-import {
   padding: 10px 20px;
   border: none;
@@ -341,6 +351,11 @@ async function handleImport() {
 
 .btn-import:hover:not(:disabled) {
   background: #15b0a3;
+}
+
+.btn-import:focus-visible {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
 }
 
 .btn-import:disabled,
