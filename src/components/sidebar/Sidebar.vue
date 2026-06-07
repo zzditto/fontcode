@@ -13,7 +13,6 @@ const showAddModal = ref(false);
   <aside class="sidebar">
     <div class="sidebar-header">FontCode</div>
     <div class="sidebar-section">
-      <div class="section-label">编程字体</div>
       <FontList @add-font="showAddModal = true" />
     </div>
     <div class="sidebar-section">
