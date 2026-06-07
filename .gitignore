@@ -1,3 +1,6 @@
 .claude/
 .superpowers/
 .opencode/
+
+node_modules/
+dist/
