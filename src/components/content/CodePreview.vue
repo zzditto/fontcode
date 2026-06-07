@@ -38,6 +38,9 @@ const themeClass = computed(() =>
 
 <template>
   <div
+    :id="'code-panel'"
+    role="tabpanel"
+    :aria-labelledby="'tab-' + (currentSnippet?.key ?? '')"
     :class="['code-preview-wrapper', themeClass]"
     :style="{
       fontFamily: fontFamily,

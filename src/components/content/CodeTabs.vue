@@ -7,18 +7,20 @@ const store = inject(storeKey)!;
 </script>
 
 <template>
-  <nav class="code-tabs" role="tablist" aria-label="代码片段选择">
+  <div class="code-tabs" role="tablist" aria-label="代码片段选择">
     <button
       v-for="snip in snippets"
       :key="snip.key"
+      :id="'tab-' + snip.key"
       role="tab"
       :aria-selected="store.activeSnippet === snip.key"
+      :aria-controls="'code-panel'"
       :class="['tab-btn', { active: store.activeSnippet === snip.key }]"
       @click="store.activeSnippet = snip.key"
     >
       {{ snip.label }}
     </button>
-  </nav>
+  </div>
 </template>
 
 <style scoped>
