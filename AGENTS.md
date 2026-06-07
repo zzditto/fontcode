@@ -44,3 +44,8 @@ src/
 
 - 无测试框架、无 lint/formatter 脚本、无 CI。
 - `.opencode/`、`.codegraph/` 已 gitignore。
+
+## codegraph
+
+  - 分析项目结构、调用链、影响范围时，优先使用 codegraph MCP 工具
+  - 大改动前先用 codegraph 查影响范围
