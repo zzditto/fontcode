@@ -29,7 +29,12 @@ const highlightedCode = computed(() => {
   );
 });
 
-const fontFamily = computed(() => currentFont.value?.fontFamily ?? 'monospace');
+const fontFamily = computed(() => {
+  const builtin = currentFont.value?.fontFamily;
+  if (builtin) return builtin;
+  const custom = store.customFonts.find((f) => f.name === store.selectedFont);
+  return custom?.fontFamily ?? 'monospace';
+});
 
 const themeClass = computed(() =>
   `theme-${store.theme}`
