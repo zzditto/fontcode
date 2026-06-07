@@ -1,16 +1,20 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import FontList from './FontList.vue';
 import FontSizeSlider from './FontSizeSlider.vue';
 import ThemeToggle from './ThemeToggle.vue';
 import FontInfo from './FontInfo.vue';
+import AddFontModal from './AddFontModal.vue';
+
+const showAddModal = ref(false);
 </script>
 
 <template>
   <aside class="sidebar">
-    <div class="sidebar-header">🏝 FontCode</div>
+    <div class="sidebar-header">FontCode</div>
     <div class="sidebar-section">
       <div class="section-label">编程字体</div>
-      <FontList />
+      <FontList @add-font="showAddModal = true" />
     </div>
     <div class="sidebar-section">
       <FontSizeSlider />
@@ -23,6 +27,12 @@ import FontInfo from './FontInfo.vue';
       <FontInfo />
     </div>
   </aside>
+
+  <AddFontModal
+    :show="showAddModal"
+    @close="showAddModal = false"
+    @imported="showAddModal = false"
+  />
 </template>
 
 <style scoped>
