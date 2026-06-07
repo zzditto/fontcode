@@ -18,6 +18,11 @@
   font-size: inherit;
 }
 
+.code-preview-wrapper pre,
+.code-preview-wrapper pre code {
+  font-family: inherit;
+}
+
 /* 深色主题 */
 .theme-dark.code-preview-wrapper {
   background: #2b2118;

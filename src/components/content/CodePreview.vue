@@ -42,12 +42,13 @@ const themeClass = computed(() =>
     role="tabpanel"
     :aria-labelledby="'tab-' + (currentSnippet?.key ?? '')"
     :class="['code-preview-wrapper', themeClass]"
-    :style="{
-      fontFamily: fontFamily,
-      fontSize: store.fontSize + 'px',
-    }"
   >
-    <pre><code class="language-plain" v-html="highlightedCode"></code></pre>
+    <pre
+      :style="{
+        fontFamily: fontFamily,
+        fontSize: store.fontSize + 'px',
+      }"
+    ><code class="language-plain" v-html="highlightedCode"></code></pre>
   </div>
 </template>
 
