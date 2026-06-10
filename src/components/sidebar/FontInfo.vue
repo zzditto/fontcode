@@ -14,6 +14,23 @@ const customInfo = computed<CustomFont | undefined>(() =>
 );
 
 const currentFont = computed(() => builtInInfo.value ?? customInfo.value ?? null);
+
+const sourceLabel = computed(() => {
+  const info = customInfo.value;
+
+  if (!info) return '';
+
+  switch (info.source) {
+    case 'nerd-fonts':
+      return info.cached ? 'Nerd Fonts · 已缓存' : 'Nerd Fonts · 在线';
+    case 'google-fonts':
+      return 'Google Fonts';
+    case 'file':
+      return '本地文件';
+    case 'url':
+      return '远程链接';
+  }
+});
 </script>
 
 <template>
@@ -31,7 +48,13 @@ const currentFont = computed(() => builtInInfo.value ?? customInfo.value ?? null
             <span class="info-value">{{ builtInInfo.license }}</span>
           </div>
         </template>
-        <div v-else class="custom-tag">自定义字体</div>
+        <template v-else>
+          <div class="custom-tag">自定义字体</div>
+          <div class="info-row">
+            <span class="info-label">来源</span>
+            <span class="info-value">{{ sourceLabel }}</span>
+          </div>
+        </template>
       </div>
     </Card>
   </div>

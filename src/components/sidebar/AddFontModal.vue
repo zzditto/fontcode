@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, watch, nextTick } from 'vue';
+import { computed, ref, watch, nextTick } from 'vue';
 import { store } from '../../store';
-import { addFontFromUrl, addFontFromFile } from '../../services/customFonts';
+import { addFontFromUrl, addFontFromFile, addRemoteNerdFont } from '../../services/customFonts';
+import { nerdFonts, type NerdFontMeta, type NerdFontVariant } from '../../data/nerdFonts';
 
 const props = defineProps<{
   show: boolean;
@@ -12,28 +13,58 @@ const emit = defineEmits<{
   (e: 'imported'): void;
 }>();
 
-const activeTab = ref<'url' | 'file'>('url');
+const activeTab = ref<'url' | 'file' | 'nerd'>('url');
 const urlInput = ref('');
 const nameInput = ref('');
 const fileInput = ref<HTMLInputElement | null>(null);
 const urlInputRef = ref<HTMLInputElement | null>(null);
 const loading = ref(false);
 const error = ref('');
+const nerdfontSearch = ref('');
+const nerdLoading = ref(false);
+const nerdError = ref('');
+const isBusy = computed(() => loading.value || nerdLoading.value);
+
+const filteredNerdFonts = computed(() => {
+  const keyword = nerdfontSearch.value.trim().toLowerCase();
+  if (!keyword) return nerdFonts;
+  return nerdFonts.filter((font) =>
+    font.name.toLowerCase().includes(keyword) ||
+    font.description.toLowerCase().includes(keyword)
+  );
+});
 
 watch(() => props.show, async (val) => {
   if (val) {
     urlInput.value = '';
     nameInput.value = '';
     error.value = '';
+    nerdfontSearch.value = '';
+    nerdError.value = '';
     loading.value = false;
+    nerdLoading.value = false;
     await nextTick();
     urlInputRef.value?.focus();
   }
 });
 
 function closeModal() {
-  if (loading.value) return;
+  if (isBusy.value) return;
   emit('close');
+}
+
+function setActiveTab(tab: 'url' | 'file' | 'nerd') {
+  if (isBusy.value) return;
+  activeTab.value = tab;
+  error.value = '';
+  nerdError.value = '';
+}
+
+function isNerdFontAdded(meta: NerdFontMeta, variant: NerdFontVariant) {
+  const providerId = `${meta.id}/${variant.id}`;
+  return store.customFonts.some((font) =>
+    font.source === 'nerd-fonts' && font.providerId === providerId
+  );
 }
 
 function handleKeydown(e: KeyboardEvent) {
@@ -60,7 +91,33 @@ function handleKeydown(e: KeyboardEvent) {
   }
 }
 
+async function handleNerdFontImport(meta: NerdFontMeta, variant: NerdFontVariant) {
+  if (isBusy.value || isNerdFontAdded(meta, variant)) return;
+
+  nerdError.value = '';
+  nerdLoading.value = true;
+  try {
+    const font = await addRemoteNerdFont({
+      name: `${meta.name} Nerd Font ${variant.label}`,
+      fontFamily: variant.fontFamily,
+      remoteUrl: variant.url,
+      providerId: `${meta.id}/${variant.id}`,
+      variant: variant.id,
+      format: variant.format,
+    });
+    store.customFonts.push(font);
+    store.selectedFont = font.name;
+    emit('imported');
+    emit('close');
+  } catch {
+    nerdError.value = '在线字体加载失败，可稍后重试或使用本地字体导入。';
+  } finally {
+    nerdLoading.value = false;
+  }
+}
+
 async function handleImport() {
+  if (isBusy.value) return;
   error.value = '';
 
   if (activeTab.value === 'url') {
@@ -117,20 +174,28 @@ async function handleImport() {
         <div class="tab-bar">
           <button
             :class="['tab', { active: activeTab === 'url' }]"
-            @click="activeTab = 'url'"
+            :disabled="isBusy"
+            @click="setActiveTab('url')"
           >
             网站字体
           </button>
           <button
             :class="['tab', { active: activeTab === 'file' }]"
-            @click="activeTab = 'file'"
+            :disabled="isBusy"
+            @click="setActiveTab('file')"
           >
             本地字体
+          </button>
+          <button
+            :class="['tab', { active: activeTab === 'nerd' }]"
+            :disabled="isBusy"
+            @click="setActiveTab('nerd')"
+          >
+            Nerd Fonts
           </button>
         </div>
 
         <div class="modal-body">
-          <!-- URL Tab -->
           <div v-if="activeTab === 'url'" class="tab-content">
             <label class="field-label">字体链接</label>
             <input
@@ -139,14 +204,13 @@ async function handleImport() {
               type="url"
               class="field-input"
               placeholder="https://fonts.googleapis.com/css2?family=..."
-              :disabled="loading"
+              :disabled="isBusy"
             />
             <p class="field-hint">
               支持 Google Fonts 链接或直链 .woff2/.ttf/.otf 文件
             </p>
           </div>
 
-          <!-- File Tab -->
           <div v-if="activeTab === 'file'" class="tab-content">
             <label class="field-label">字体文件</label>
             <input
@@ -154,32 +218,73 @@ async function handleImport() {
               type="file"
               accept=".woff2,.ttf,.otf,.woff"
               class="field-input"
-              :disabled="loading"
+              :disabled="isBusy"
             />
             <p class="field-hint">
               支持 .woff2 / .ttf / .otf / .woff 格式
             </p>
           </div>
 
-          <!-- Name Input (shared) -->
-          <label class="field-label">字体名称（可选）</label>
-          <input
-            v-model="nameInput"
-            type="text"
-            class="field-input"
-            placeholder="留空则自动检测"
-            :disabled="loading"
-          />
+          <div v-if="activeTab === 'nerd'" class="tab-content">
+            <label class="field-label">搜索 Nerd Fonts</label>
+            <input
+              v-model="nerdfontSearch"
+              type="search"
+              class="field-input"
+              placeholder="搜索字体名称或简介"
+              :disabled="isBusy"
+            />
+            <div class="nerd-font-list">
+              <div
+                v-for="font in filteredNerdFonts"
+                :key="font.id"
+                class="nerd-font-item"
+              >
+                <div class="nerd-font-header">
+                  <span class="nerd-font-name">{{ font.name }}</span>
+                  <span class="nerd-font-badge">Nerd Fonts</span>
+                </div>
+                <p class="nerd-font-desc">{{ font.description }}</p>
+                <div class="nerd-font-actions">
+                  <button
+                    v-for="variant in font.variants"
+                    :key="variant.id"
+                    class="nerd-variant-btn"
+                    :disabled="isBusy || isNerdFontAdded(font, variant)"
+                    @click="handleNerdFontImport(font, variant)"
+                  >
+                    {{ isNerdFontAdded(font, variant) ? '已添加' : variant.label }}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <p v-if="filteredNerdFonts.length === 0" class="field-hint">没有找到匹配的 Nerd Fonts</p>
+          </div>
 
-          <!-- Error -->
-          <p v-if="error" class="error-msg">{{ error }}</p>
+          <template v-if="activeTab !== 'nerd'">
+            <label class="field-label">字体名称（可选）</label>
+            <input
+              v-model="nameInput"
+              type="text"
+              class="field-input"
+              placeholder="留空则自动检测"
+              :disabled="isBusy"
+            />
+          </template>
+
+          <p v-if="error || nerdError" class="error-msg">{{ error || nerdError }}</p>
         </div>
 
         <div class="modal-footer">
-          <button class="btn-cancel" @click="closeModal" :disabled="loading">
+          <button class="btn-cancel" @click="closeModal" :disabled="isBusy">
             取消
           </button>
-          <button class="btn-import" @click="handleImport" :disabled="loading">
+          <button
+            v-if="activeTab !== 'nerd'"
+            class="btn-import"
+            @click="handleImport"
+            :disabled="isBusy"
+          >
             {{ loading ? '导入中...' : '导入字体' }}
           </button>
         </div>
@@ -304,6 +409,86 @@ async function handleImport() {
   color: #d95b5b;
   margin: 0;
   white-space: pre-wrap;
+}
+
+.nerd-font-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.nerd-font-item {
+  padding: 12px;
+  border: 2px solid #efe5ce;
+  border-radius: 14px;
+  background: #fffdf7;
+}
+
+.nerd-font-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.nerd-font-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #794f27;
+}
+
+.nerd-font-badge {
+  flex-shrink: 0;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e4faf7;
+  color: #15a99d;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.nerd-font-desc {
+  margin: 6px 0 0;
+  color: #8d7a5b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nerd-font-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.nerd-variant-btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 50px;
+  background: #19c8b9;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.nerd-variant-btn:hover:not(:disabled) {
+  background: #15b0a3;
+}
+
+.nerd-variant-btn:focus-visible {
+  outline: 2px solid #ffcc00;
+  outline-offset: 2px;
+}
+
+.nerd-variant-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 .modal-footer {

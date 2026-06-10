@@ -2,9 +2,13 @@ export interface CustomFont {
   id: string;
   name: string;
   fontFamily: string;
-  source: 'url' | 'file' | 'google-fonts';
+  source: 'url' | 'file' | 'google-fonts' | 'nerd-fonts';
   sourceUrl?: string;
-  blobData: ArrayBuffer;
+  remoteUrl?: string;
+  providerId?: string;
+  variant?: string;
+  cached?: boolean;
+  blobData?: ArrayBuffer;
   format: 'woff2' | 'ttf' | 'otf' | 'woff';
   addedAt: number;
 }
@@ -12,8 +16,50 @@ export interface CustomFont {
 const DB_NAME = 'fontcode';
 const DB_VERSION = 1;
 const STORE_NAME = 'custom-fonts';
+const FONT_SOURCES: CustomFont['source'][] = ['url', 'file', 'google-fonts', 'nerd-fonts'];
+const FONT_FORMATS: CustomFont['format'][] = ['woff2', 'ttf', 'otf', 'woff'];
 
 let dbPromise: Promise<IDBDatabase> | null = null;
+
+function isHttpUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+function isCustomFont(value: unknown): value is CustomFont {
+  if (value == null || typeof value !== 'object') return false;
+  const font = value as Partial<CustomFont>;
+  const hasBlobData = font.blobData instanceof ArrayBuffer;
+  const hasRemoteUrl = typeof font.remoteUrl === 'string' && isHttpUrl(font.remoteUrl);
+
+  if (
+    typeof font.id !== 'string' ||
+    typeof font.name !== 'string' ||
+    typeof font.fontFamily !== 'string' ||
+    typeof font.source !== 'string' ||
+    !FONT_SOURCES.includes(font.source as CustomFont['source']) ||
+    typeof font.format !== 'string' ||
+    !FONT_FORMATS.includes(font.format as CustomFont['format']) ||
+    typeof font.addedAt !== 'number' ||
+    !Number.isFinite(font.addedAt)
+  ) {
+    return false;
+  }
+
+  if (font.sourceUrl !== undefined && typeof font.sourceUrl !== 'string') return false;
+  if (font.remoteUrl !== undefined && !hasRemoteUrl) return false;
+  if (font.providerId !== undefined && typeof font.providerId !== 'string') return false;
+  if (font.variant !== undefined && typeof font.variant !== 'string') return false;
+  if (font.cached !== undefined && typeof font.cached !== 'boolean') return false;
+  if (font.blobData !== undefined && !hasBlobData) return false;
+
+  if (font.source === 'nerd-fonts') return hasBlobData || hasRemoteUrl;
+  return hasBlobData;
+}
 
 function openDB(): Promise<IDBDatabase> {
   if (dbPromise) return dbPromise;
@@ -59,17 +105,23 @@ export async function loadAllFonts(): Promise<CustomFont[]> {
     const tx = db.transaction(STORE_NAME, 'readonly');
     const request = tx.objectStore(STORE_NAME).getAll();
     request.onsuccess = () => {
-      const raw = request.result as CustomFont[];
-      const valid = raw.filter(
-        (f): f is CustomFont =>
-          f != null &&
-          typeof f.id === 'string' &&
-          typeof f.name === 'string' &&
-          f.blobData instanceof ArrayBuffer
-      );
-      resolve(valid);
+      const raw = request.result as unknown[];
+      resolve(raw.filter(isCustomFont));
     };
     request.onerror = () => reject(request.error ?? new Error('读取字体列表失败'));
+  });
+}
+
+export async function getFontById(id: string): Promise<CustomFont | undefined> {
+  const db = await openDB();
+  return new Promise((resolve, reject) => {
+    const tx = db.transaction(STORE_NAME, 'readonly');
+    const request = tx.objectStore(STORE_NAME).get(id);
+    request.onsuccess = () => {
+      const result = request.result as unknown;
+      resolve(isCustomFont(result) ? result : undefined);
+    };
+    request.onerror = () => reject(request.error ?? new Error('读取字体失败'));
   });
 }
 
@@ -87,7 +139,12 @@ export async function loadFontToDocument(font: CustomFont): Promise<void> {
   const family = extractFamilyName(font.fontFamily);
   const existing = Array.from(document.fonts.values()).find((f) => f.family === family);
   if (existing) return;
-  const fontFace = new FontFace(family, font.blobData);
+  const fontFace = font.blobData
+    ? new FontFace(family, font.blobData)
+    : font.remoteUrl
+      ? new FontFace(family, `url(${JSON.stringify(font.remoteUrl)})`)
+      : null;
+  if (!fontFace) throw new Error('字体缺少可加载资源');
   await fontFace.load();
   document.fonts.add(fontFace);
 }
@@ -200,6 +257,47 @@ export async function addFontFromFile(file: File, customName?: string): Promise<
   await saveFont(font);
   await loadFontToDocument(font);
   return font;
+}
+
+export async function addRemoteNerdFont(options: {
+  name: string;
+  fontFamily: string;
+  remoteUrl: string;
+  providerId: string;
+  variant: string;
+  format: CustomFont['format'];
+}): Promise<CustomFont> {
+  if (!isHttpUrl(options.remoteUrl)) throw new Error('字体远程链接无效');
+
+  const font: CustomFont = {
+    id: crypto.randomUUID(),
+    name: options.name,
+    fontFamily: options.fontFamily,
+    source: 'nerd-fonts',
+    remoteUrl: options.remoteUrl,
+    providerId: options.providerId,
+    variant: options.variant,
+    cached: false,
+    format: options.format,
+    addedAt: Date.now(),
+  };
+  await loadFontToDocument(font);
+  await saveFont(font);
+  return font;
+}
+
+export async function cacheRemoteFont(id: string): Promise<CustomFont> {
+  const font = await getFontById(id);
+  if (!font) throw new Error('字体不存在');
+  if (!font.remoteUrl) throw new Error('字体缺少远程链接');
+  const blobData = await downloadFont(font.remoteUrl);
+  const cachedFont: CustomFont = {
+    ...font,
+    blobData,
+    cached: true,
+  };
+  await saveFont(cachedFont);
+  return cachedFont;
 }
 
 export async function deleteFont(id: string, fontFamily: string): Promise<void> {
