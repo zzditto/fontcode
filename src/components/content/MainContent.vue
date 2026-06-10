@@ -20,4 +20,9 @@ import CodePreview from './CodePreview.vue';
   overflow: hidden;
   min-width: 0;
 }
+
+.main-content > :last-child {
+  flex: 1;
+  min-height: 0;
+}
 </style>

@@ -2,18 +2,18 @@
 .code-preview-wrapper {
   border-radius: 20px;
   overflow: hidden;
-  font-family: inherit;
-  font-size: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .code-preview-wrapper pre {
   margin: 0;
-  padding: 24px 28px;
+  padding: 20px 28px;
   tab-size: 2;
-  line-height: 1.7;
-  overflow-x: auto;
-  white-space: pre;
-  min-height: 320px;
+  line-height: 1.55;
+  overflow: auto;
+  flex: 1;
   font-family: inherit;
   font-size: inherit;
 }
