@@ -10,62 +10,138 @@ export const snippets: Snippet[] = [
     key: 'javascript',
     label: 'JavaScript',
     language: 'javascript',
-    code: `// 现代 JavaScript — 箭头函数、模板字符串、解构
+    code: `// 现代 JavaScript — 闭包、Proxy、生成器、Promise
 const greet = (name) => \`Hello, \${name}!\`;
 
-const user = { name: 'Alice', role: 'developer' };
-const { name, role } = user;
+// 解构 & 展开
+const user = { name: 'Alice', role: 'developer', skills: ['Vue', 'TS'] };
+const { name, role, skills } = user;
+const merged = { ...user, active: true };
 
-const fetchData = async (url) => {
+// 闭包
+function createCounter(init = 0) {
+  let count = init;
+  return {
+    inc: () => ++count,
+    dec: () => --count,
+    get: () => count,
+  };
+}
+
+const counter = createCounter(10);
+counter.inc();
+counter.inc();
+
+// Promise 链 & async/await
+const fetchJSON = async (url) => {
   const res = await fetch(url);
-  if (!res.ok) throw new Error('Network error');
+  if (!res.ok) throw new Error(\`HTTP \${res.status}\`);
   return res.json();
 };
 
-const numbers = [1, 2, 3, 4, 5];
-const doubled = numbers.map(n => n * 2);
-const evens = numbers.filter(n => n % 2 === 0);
+// Proxy
+const handler = {
+  get(target, prop) {
+    return prop in target ? target[prop] : \`No \${String(prop)}\`;
+  },
+};
+const proxy = new Proxy({ a: 1, b: 2 }, handler);
 
-console.log(greet(name), role, doubled, evens);`,
+// 生成器
+function* range(start, end) {
+  for (let i = start; i <= end; i++) yield i;
+}
+
+// 数组方法链
+const nums = [1, 2, 3, 4, 5, 6];
+const result = nums
+  .filter(n => n % 2 === 0)
+  .map(n => n ** 2)
+  .reduce((a, b) => a + b, 0);
+
+// Set & Map
+const uniq = [...new Set([1, 2, 2, 3, 3, 4])];
+const map = new Map([['a', 1], ['b', 2]]);
+
+console.log(greet(name), proxy.c, [...range(1, 3)], result, uniq);`,
   },
   {
     key: 'typescript',
     label: 'TypeScript',
     language: 'typescript',
-    code: `// TypeScript — 类型注解、接口、泛型
+    code: `// TypeScript — 泛型约束、工具类型、条件类型
 interface User {
   id: number;
   name: string;
   email?: string;
+  role: 'admin' | 'editor' | 'viewer';
 }
 
-type Role = 'admin' | 'editor' | 'viewer';
+type Nullable<T> = T | null;
+type UserPreview = Pick<User, 'id' | 'name'>;
+type UserPatch = Partial<Pick<User, 'email' | 'role'>>;
 
-function getUser<T extends User>(items: T[], id: number): T | undefined {
-  return items.find(item => item.id === id);
+// 条件类型
+type IsString<T> = T extends string ? 'yes' : 'no';
+type A = IsString<string>;  // 'yes'
+type B = IsString<number>;  // 'no'
+
+// 泛型约束
+function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
 }
 
-class DataStore<T> {
-  private items: T[] = [];
+class DataStore<T extends { id: number }> {
+  private items: Map<number, T> = new Map();
 
   add(item: T): void {
-    this.items.push(item);
+    this.items.set(item.id, item);
+  }
+
+  get(id: number): T | undefined {
+    return this.items.get(id);
   }
 
   getAll(): readonly T[] {
-    return this.items;
+    return [...this.items.values()];
+  }
+
+  remove(id: number): boolean {
+    return this.items.delete(id);
   }
 }
 
+enum Status { Active = 'ACTIVE', Inactive = 'INACTIVE', Pending = 'PENDING' }
+
 const store = new DataStore<User>();
-store.add({ id: 1, name: 'Alice', email: 'alice@example.com' });
-console.log(getUser(store.getAll(), 1)?.name ?? 'Not found');`,
+store.add({ id: 1, name: 'Alice', role: 'admin' });
+store.add({ id: 2, name: 'Bob', role: 'editor' });
+
+const user = store.get(1);
+const name = user ? getProp(user, 'name') : 'Unknown';
+console.log(name, store.getAll().length, Status.Active);`,
   },
   {
     key: 'python',
     label: 'Python',
     language: 'python',
-    code: `# Python — 函数、列表推导式、with 语句
+    code: `# Python — dataclass、async/await、类型注解
+from dataclasses import dataclass, field
+from typing import Optional, Generator
+import asyncio
+import json
+
+@dataclass
+class User:
+    id: int
+    name: str
+    email: Optional[str] = None
+    tags: list[str] = field(default_factory=list)
+
+    def display(self) -> str:
+        return f"{self.name} <{self.email or 'N/A'}>"
+
+
 def fibonacci(n: int) -> list[int]:
     """生成前 n 个斐波那契数。"""
     a, b = 0, 1
@@ -75,24 +151,52 @@ def fibonacci(n: int) -> list[int]:
         a, b = b, a + b
     return result
 
-# 列表推导式
-squares = [x ** 2 for x in range(10) if x % 2 == 0]
 
-# With 语句（上下文管理器）
-with open('config.json', 'r') as f:
-    config = json.load(f)
+# 生成器
+def even_numbers(limit: int) -> Generator[int, None, None]:
+    for i in range(limit):
+        if i % 2 == 0:
+            yield i
+
+
+# 列表推导式 & 字典推导式
+squares = [x ** 2 for x in range(10) if x % 2 == 0]
+lookup = {x: x ** 2 for x in range(5)}
+
+
+# async/await
+async def fetch_config(path: str) -> dict:
+    await asyncio.sleep(0.1)  # 模拟 I/O
+    with open(path, 'r') as f:
+        return json.load(f)
+
 
 # 装饰器
 def timer(func):
+    from functools import wraps
+    import time
+
+    @wraps(func)
     def wrapper(*args, **kwargs):
         start = time.time()
         result = func(*args, **kwargs)
-        print(f'{func.__name__} took {time.time() - start:.3f}s')
+        elapsed = time.time() - start
+        print(f'{func.__name__} took {elapsed:.3f}s')
         return result
     return wrapper
 
+
+@timer
+def compute() -> int:
+    return sum(even_numbers(1000))
+
+
+user = User(id=1, name='Alice', tags=['python', 'async'])
+print(user.display())
 print(fibonacci(10))
-print(squares)`,
+print(squares)
+print(lookup)
+print(compute())`,
   },
   {
     key: 'json',
@@ -102,6 +206,7 @@ print(squares)`,
   "name": "fontcode",
   "version": "1.0.0",
   "description": "编程字体预览平台",
+  "license": "MIT",
   "fonts": [
     "Fira Code",
     "JetBrains Mono",
@@ -115,49 +220,107 @@ print(squares)`,
   "theme": {
     "dark": {
       "background": "#2b2118",
-      "foreground": "#e8d5bc"
+      "foreground": "#e8d5bc",
+      "selection": "#4a3a2a",
+      "lineHighlight": "#332a20"
     },
     "light": {
       "background": "#f8f8f0",
-      "foreground": "#725d42"
+      "foreground": "#725d42",
+      "selection": "#e0d5c0",
+      "lineHighlight": "#f0ead8"
     }
   },
   "settings": {
     "fontSize": 14,
     "tabSize": 2,
-    "ligatures": true
-  }
+    "ligatures": true,
+    "lineNumbers": false,
+    "wordWrap": "off"
+  },
+  "snippets": [
+    { "key": "javascript", "label": "JavaScript" },
+    { "key": "typescript", "label": "TypeScript" },
+    { "key": "python", "label": "Python" },
+    { "key": "json", "label": "JSON" },
+    { "key": "html", "label": "HTML" }
+  ],
+  "contributors": [
+    { "name": "Alice", "role": "maintainer" },
+    { "name": "Bob", "role": "designer" }
+  ]
 }`,
   },
   {
     key: 'html',
     label: 'HTML',
     language: 'html',
-    code: `<!-- HTML5 — 语义标签、属性、嵌套结构 -->
+    code: `<!-- HTML5 — 语义标签、表单、SVG -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FontCode — Programming Font Preview</title>
+  <title>FontCode — 编程字体预览</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="app-header">
-    <h1>FontCode 🏝</h1>
-    <nav aria-label="Main">
-      <a href="#fonts">Fonts</a>
-      <a href="#about">About</a>
+    <h1>FontCode</h1>
+    <nav aria-label="主导航">
+      <a href="#fonts">字体</a>
+      <a href="#about">关于</a>
+      <a href="#settings">设置</a>
     </nav>
   </header>
+
   <main>
     <section id="fonts" class="font-grid">
       <article class="font-card" data-font="fira-code">
         <h2>Fira Code</h2>
-        <p>Designed by Nikita Prokopov</p>
+        <p>由 Nikita Prokopov 设计</p>
+        <span class="badge">连字</span>
+      </article>
+      <article class="font-card" data-font="jetbrains-mono">
+        <h2>JetBrains Mono</h2>
+        <p>由 JetBrains 设计</p>
+        <span class="badge">连字</span>
       </article>
     </section>
+
+    <form class="settings-form" onsubmit="return false">
+      <fieldset>
+        <legend>偏好设置</legend>
+        <label>
+          <span>字号</span>
+          <input type="range" min="10" max="24" value="14" name="fontSize">
+        </label>
+        <label>
+          <input type="checkbox" name="ligatures" checked>
+          <span>启用连字</span>
+        </label>
+        <label>
+          <span>主题</span>
+          <select name="theme">
+            <option value="dark">深色</option>
+            <option value="light">浅色</option>
+          </select>
+        </label>
+      </fieldset>
+    </form>
+
+    <svg width="200" height="60" viewBox="0 0 200 60"
+         xmlns="http://www.w3.org/2000/svg" aria-label="FontCode 图标">
+      <text x="10" y="40" font-family="monospace" font-size="28"
+            font-weight="bold" fill="currentColor">
+        &lt;FC /&gt;
+      </text>
+    </svg>
   </main>
-  <footer>&copy; 2026 FontCode</footer>
+
+  <footer>
+    <small>&copy; 2026 FontCode</small>
+  </footer>
 </body>
 </html>`,
   },
