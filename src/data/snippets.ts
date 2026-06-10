@@ -129,7 +129,6 @@ console.log(name, store.getAll().length, Status.Active);`,
 from dataclasses import dataclass, field
 from typing import Optional, Generator
 import asyncio
-import json
 
 @dataclass
 class User:
@@ -141,35 +140,19 @@ class User:
     def display(self) -> str:
         return f"{self.name} <{self.email or 'N/A'}>"
 
-
-def fibonacci(n: int) -> list[int]:
-    """生成前 n 个斐波那契数。"""
-    a, b = 0, 1
-    result = []
-    for _ in range(n):
-        result.append(a)
-        a, b = b, a + b
-    return result
-
-
 # 生成器
 def even_numbers(limit: int) -> Generator[int, None, None]:
     for i in range(limit):
         if i % 2 == 0:
             yield i
 
-
-# 列表推导式 & 字典推导式
+# 列表推导式
 squares = [x ** 2 for x in range(10) if x % 2 == 0]
-lookup = {x: x ** 2 for x in range(5)}
-
 
 # async/await
-async def fetch_config(path: str) -> dict:
-    await asyncio.sleep(0.1)  # 模拟 I/O
-    with open(path, 'r') as f:
-        return json.load(f)
-
+async def fetch_data() -> dict:
+    await asyncio.sleep(0.1)
+    return {"status": "ok"}
 
 # 装饰器
 def timer(func):
@@ -185,17 +168,13 @@ def timer(func):
         return result
     return wrapper
 
-
 @timer
 def compute() -> int:
     return sum(even_numbers(1000))
 
-
 user = User(id=1, name='Alice', tags=['python', 'async'])
 print(user.display())
-print(fibonacci(10))
 print(squares)
-print(lookup)
 print(compute())`,
   },
   {
@@ -265,30 +244,22 @@ print(compute())`,
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="app-header">
+  <header>
     <h1>FontCode</h1>
     <nav aria-label="主导航">
       <a href="#fonts">字体</a>
       <a href="#about">关于</a>
-      <a href="#settings">设置</a>
     </nav>
   </header>
-
   <main>
-    <section id="fonts" class="font-grid">
+    <section id="fonts">
       <article class="font-card" data-font="fira-code">
         <h2>Fira Code</h2>
         <p>由 Nikita Prokopov 设计</p>
         <span class="badge">连字</span>
       </article>
-      <article class="font-card" data-font="jetbrains-mono">
-        <h2>JetBrains Mono</h2>
-        <p>由 JetBrains 设计</p>
-        <span class="badge">连字</span>
-      </article>
     </section>
-
-    <form class="settings-form" onsubmit="return false">
+    <form onsubmit="return false">
       <fieldset>
         <legend>偏好设置</legend>
         <label>
@@ -308,7 +279,6 @@ print(compute())`,
         </label>
       </fieldset>
     </form>
-
     <svg width="200" height="60" viewBox="0 0 200 60"
          xmlns="http://www.w3.org/2000/svg" aria-label="FontCode 图标">
       <text x="10" y="40" font-family="monospace" font-size="28"
@@ -317,10 +287,6 @@ print(compute())`,
       </text>
     </svg>
   </main>
-
-  <footer>
-    <small>&copy; 2026 FontCode</small>
-  </footer>
 </body>
 </html>`,
   },
