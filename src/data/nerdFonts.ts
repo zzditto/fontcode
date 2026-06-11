@@ -3,7 +3,7 @@ export interface NerdFontVariant {
   label: string;
   fontFamily: string;
   url: string;
-  format: 'ttf';
+  format: 'ttf' | 'otf';
   recommended?: boolean;
 }
 
