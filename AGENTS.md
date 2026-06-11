@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-编程字体预览单页应用。Vue 3 + Vite + TypeScript，无后端。
+编程字体预览单页应用。Vue 3 + Vite + TypeScript，无后端。动物森友会风格。
 
 ## 命令
 
