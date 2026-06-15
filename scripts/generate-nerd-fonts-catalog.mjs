@@ -65,8 +65,115 @@ function scoreFile(basename) {
   return 0;
 }
 
+async function fetchTree() {
+  const headers = { 'User-Agent': 'fontcode-catalog-generator' };
+  const token = process.env.GITHUB_TOKEN;
+  if (token) headers.Authorization = `token ${token}`;
+
+  const res = await fetch(GITHUB_TREE_URL, { headers });
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`GitHub API ${res.status}: ${text.slice(0, 300)}`);
+  }
+  const data = await res.json();
+  if (data.truncated === true) {
+    throw new Error('GitHub Tree API 返回 truncated；请配置 GITHUB_TOKEN 后重试。');
+  }
+  if (!Array.isArray(data.tree)) {
+    throw new Error('GitHub Tree API 返回结构异常：缺少 tree 数组');
+  }
+  return data.tree;
+}
+
+function parseFontPath(path) {
+  const parts = path.split('/');
+  const family = parts[1];
+  const filename = parts[parts.length - 1];
+  if (!family || !filename || !/\.(ttf|otf)$/i.test(filename)) return null;
+  return { family, filename, basename: stripExtension(filename) };
+}
+
+function pickVariants(family, files) {
+  const buckets = { Regular: [], Bold: [], Italic: [], BoldItalic: [] };
+  for (const file of files) {
+    const weight = classifyWeight(file.basename);
+    if (!weight) continue;
+    const score = scoreFile(file.basename);
+    if (score === 0) continue;
+    buckets[weight].push({ ...file, score });
+  }
+
+  const order = ['Regular', 'Bold', 'Italic', 'BoldItalic'];
+  const familySlug = slugify(family);
+  const variants = [];
+  for (const weight of order) {
+    const list = buckets[weight];
+    if (list.length === 0) continue;
+    list.sort((a, b) => (b.score - a.score) || a.path.localeCompare(b.path));
+    const top = list[0];
+    variants.push({
+      id: `${familySlug}-${slugify(top.basename)}`,
+      label: weight,
+      fontFamily: buildFontFamily(top.basename),
+      url: `${RAW_BASE_URL}/${encodePath(top.path)}`,
+      format: getFormat(top.filename),
+      ...(weight === 'Regular' ? { recommended: true } : {}),
+    });
+  }
+  return variants;
+}
+
+function parseCatalog(tree) {
+  const grouped = new Map();
+  for (const item of tree) {
+    if (item.type !== 'blob') continue;
+    const path = item.path;
+    if (!path || !path.startsWith('patched-fonts/')) continue;
+    if (!/\.(ttf|otf)$/i.test(path)) continue;
+    const parsed = parseFontPath(path);
+    if (!parsed) continue;
+    const list = grouped.get(parsed.family) ?? [];
+    list.push({ path, filename: parsed.filename, basename: parsed.basename });
+    grouped.set(parsed.family, list);
+  }
+
+  const fonts = [];
+  for (const [family, files] of grouped) {
+    const variants = pickVariants(family, files);
+    if (variants.length === 0) continue;
+    fonts.push({
+      id: slugify(family),
+      name: toDisplayName(family),
+      description: `来自 Nerd Fonts 完整目录，包含 ${variants.length} 个变体。`,
+      variants,
+    });
+  }
+
+  fonts.sort((a, b) => a.name.localeCompare(b.name));
+  return fonts;
+}
+
 async function main() {
-  console.log('TODO: fetch & generate');
+  console.log('正在拉取 GitHub Tree ...');
+  const tree = await fetchTree();
+  console.log(`原始 tree 节点数：${tree.length}`);
+
+  const fonts = parseCatalog(tree);
+  const variantCount = fonts.reduce((sum, f) => sum + f.variants.length, 0);
+
+  const payload = {
+    generatedAt: new Date().toISOString(),
+    source: SOURCE,
+    schemaVersion: SCHEMA_VERSION,
+    fonts,
+  };
+
+  const json = JSON.stringify(payload, null, 2) + '\n';
+  await writeFile(OUTPUT_PATH, json, 'utf8');
+
+  const sizeKb = (Buffer.byteLength(json, 'utf8') / 1024).toFixed(1);
+  console.log(`写入：${OUTPUT_PATH}`);
+  console.log(`家族：${fonts.length}，变体：${variantCount}，体积：${sizeKb} KB`);
 }
 
 main().catch((err) => {

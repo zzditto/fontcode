@@ -1,0 +1,1595 @@
+{
+  "generatedAt": "2026-06-15T03:22:25.076Z",
+  "source": "ryanoasis/nerd-fonts@master",
+  "schemaVersion": 1,
+  "fonts": [
+    {
+      "id": "3270",
+      "name": "3270",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "3270-3270-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"3270 Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/3270/Regular/3270NerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "agave",
+      "name": "Agave",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "agave-agave-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Agave Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Agave/AgaveNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "agave-agave-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Agave Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Agave/AgaveNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "anonymous-pro",
+      "name": "Anonymous Pro",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "anonymous-pro-anonymice-pro-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"AnonymicePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AnonymousPro/Regular/AnonymiceProNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "anonymous-pro-anonymice-pro-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"AnonymicePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AnonymousPro/Bold/AnonymiceProNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "anonymous-pro-anonymice-pro-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"AnonymicePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AnonymousPro/Italic/AnonymiceProNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "anonymous-pro-anonymice-pro-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"AnonymicePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AnonymousPro/Bold-Italic/AnonymiceProNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "arimo",
+      "name": "Arimo",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "arimo-arimo-nerd-font-regular",
+          "label": "Regular",
+          "fontFamily": "\"Arimo Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Arimo/Regular/ArimoNerdFont-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "arimo-arimo-nerd-font-bold",
+          "label": "Bold",
+          "fontFamily": "\"Arimo Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Arimo/Bold/ArimoNerdFont-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "arimo-arimo-nerd-font-italic",
+          "label": "Italic",
+          "fontFamily": "\"Arimo Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Arimo/Italic/ArimoNerdFont-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "arimo-arimo-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Arimo Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Arimo/Bold-Italic/ArimoNerdFont-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "aurulent-sans-mono",
+      "name": "Aurulent Sans Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "aurulent-sans-mono-aurulent-sans-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"AurulentSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/AurulentSansMono/AurulentSansMNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "big-blue-terminal",
+      "name": "Big Blue Terminal",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "big-blue-terminal-big-blue-term437-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"BigBlueTerm437 Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/BigBlueTerminal/BigBlueTerm437NerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "bitstream-vera-sans-mono",
+      "name": "Bitstream Vera Sans Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "bitstream-vera-sans-mono-bitstrom-wera-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"BitstromWera Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/BitstreamVeraSansMono/Regular/BitstromWeraNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "bitstream-vera-sans-mono-bitstrom-wera-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"BitstromWera Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/BitstreamVeraSansMono/Bold/BitstromWeraNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "cascadia-code",
+      "name": "Cascadia Code",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "cascadia-code-caskaydia-cove-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"CaskaydiaCove Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CascadiaCode/CaskaydiaCoveNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "cascadia-code-caskaydia-cove-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"CaskaydiaCove Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CascadiaCode/CaskaydiaCoveNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "cascadia-code-caskaydia-cove-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"CaskaydiaCove Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CascadiaCode/CaskaydiaCoveNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "cascadia-code-caskaydia-cove-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"CaskaydiaCove Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CascadiaCode/CaskaydiaCoveNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "code-new-roman",
+      "name": "Code New Roman",
+      "description": "来自 Nerd Fonts 完整目录，包含 3 个变体。",
+      "variants": [
+        {
+          "id": "code-new-roman-code-new-roman-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"CodeNewRoman Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CodeNewRoman/Regular/CodeNewRomanNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "code-new-roman-code-new-roman-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"CodeNewRoman Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CodeNewRoman/Bold/CodeNewRomanNerdFontMono-Bold.otf",
+          "format": "otf"
+        },
+        {
+          "id": "code-new-roman-code-new-roman-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"CodeNewRoman Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/CodeNewRoman/Italic/CodeNewRomanNerdFontMono-Italic.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "comic-shanns-mono",
+      "name": "Comic Shanns Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "comic-shanns-mono-comic-shanns-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"ComicShannsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ComicShannsMono/ComicShannsMonoNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "comic-shanns-mono-comic-shanns-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"ComicShannsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ComicShannsMono/ComicShannsMonoNerdFontMono-Bold.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "cousine",
+      "name": "Cousine",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "cousine-cousine-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Cousine Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Cousine/Regular/CousineNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "cousine-cousine-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Cousine Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Cousine/Bold/CousineNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "cousine-cousine-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Cousine Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Cousine/Italic/CousineNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "cousine-cousine-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Cousine Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Cousine/BoldItalic/CousineNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "daddy-time-mono",
+      "name": "Daddy Time Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "daddy-time-mono-daddy-time-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"DaddyTimeMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DaddyTimeMono/DaddyTimeMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "deja-vu-sans-mono",
+      "name": "Deja Vu Sans Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "deja-vu-sans-mono-deja-vu-sans-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"DejaVuSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DejaVuSansMono/Regular/DejaVuSansMNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "deja-vu-sans-mono-deja-vu-sans-mnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"DejaVuSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DejaVuSansMono/Bold/DejaVuSansMNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "droid-sans-mono",
+      "name": "Droid Sans Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "droid-sans-mono-droid-sans-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"DroidSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/DroidSansMNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "envy-code-r",
+      "name": "Envy Code R",
+      "description": "来自 Nerd Fonts 完整目录，包含 3 个变体。",
+      "variants": [
+        {
+          "id": "envy-code-r-envy-code-rnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"EnvyCodeR Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/EnvyCodeR/EnvyCodeRNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "envy-code-r-envy-code-rnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"EnvyCodeR Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/EnvyCodeR/EnvyCodeRNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "envy-code-r-envy-code-rnerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"EnvyCodeR Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/EnvyCodeR/EnvyCodeRNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "fantasque-sans-mono",
+      "name": "Fantasque Sans Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "fantasque-sans-mono-fantasque-sans-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"FantasqueSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Regular/FantasqueSansMNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "fantasque-sans-mono-fantasque-sans-mnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"FantasqueSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Bold/FantasqueSansMNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "fantasque-sans-mono-fantasque-sans-mnerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"FantasqueSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Italic/FantasqueSansMNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "fantasque-sans-mono-fantasque-sans-mnerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"FantasqueSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FantasqueSansMono/Bold-Italic/FantasqueSansMNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "fira-code",
+      "name": "Fira Code",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "fira-code-fira-code-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"FiraCode Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Regular/FiraCodeNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "fira-code-fira-code-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"FiraCode Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraCode/Bold/FiraCodeNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "fira-mono",
+      "name": "Fira Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "fira-mono-fira-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"FiraMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraMono/Regular/FiraMonoNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "fira-mono-fira-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"FiraMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/FiraMono/Bold/FiraMonoNerdFontMono-Bold.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "go-mono",
+      "name": "Go Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "go-mono-go-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"GoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Go-Mono/Regular/GoMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "go-mono-go-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"GoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Go-Mono/Bold/GoMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "go-mono-go-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"GoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Go-Mono/Italic/GoMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "go-mono-go-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"GoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Go-Mono/Bold-Italic/GoMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "gohu",
+      "name": "Gohu",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "gohu-gohu-font11-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"GohuFont11 Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Gohu/11/GohuFont11NerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "hack",
+      "name": "Hack",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "hack-hack-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Hack Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Regular/HackNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "hack-hack-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Hack Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Bold/HackNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "hack-hack-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Hack Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/Italic/HackNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "hack-hack-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Hack Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hack/BoldItalic/HackNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "hasklig",
+      "name": "Hasklig",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "hasklig-hasklug-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Hasklug Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hasklig/Regular/HasklugNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "hasklig-hasklug-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Hasklug Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hasklig/Bold/HasklugNerdFontMono-Bold.otf",
+          "format": "otf"
+        },
+        {
+          "id": "hasklig-hasklug-nerd-font-mono-black-italic",
+          "label": "Italic",
+          "fontFamily": "\"Hasklug Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hasklig/Black-Italic/HasklugNerdFontMono-BlackItalic.otf",
+          "format": "otf"
+        },
+        {
+          "id": "hasklig-hasklug-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Hasklug Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hasklig/Bold-Italic/HasklugNerdFontMono-BoldItalic.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "heavy-data",
+      "name": "Heavy Data",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "heavy-data-heavy-data-nerd-font-regular",
+          "label": "Regular",
+          "fontFamily": "\"HeavyData Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/HeavyData/HeavyDataNerdFont-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "hermit",
+      "name": "Hermit",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "hermit-hurmit-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Hurmit Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Regular/HurmitNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "hermit-hurmit-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Hurmit Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Bold/HurmitNerdFontMono-Bold.otf",
+          "format": "otf"
+        },
+        {
+          "id": "hermit-hurmit-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Hurmit Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Italic/HurmitNerdFontMono-Italic.otf",
+          "format": "otf"
+        },
+        {
+          "id": "hermit-hurmit-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Hurmit Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Hermit/Bold-Italic/HurmitNerdFontMono-BoldItalic.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "i-a-writer",
+      "name": "i A Writer",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "i-a-writer-i-mwriting-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"iMWritingMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/iA-Writer/Mono/Regular/iMWritingMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "i-a-writer-i-mwriting-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"iMWritingMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/iA-Writer/Mono/Bold/iMWritingMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "i-a-writer-i-mwriting-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"iMWritingMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/iA-Writer/Mono/Italic/iMWritingMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "i-a-writer-i-mwriting-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"iMWritingMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/iA-Writer/Mono/BoldItalic/iMWritingMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "ibmplex-mono",
+      "name": "IBM Plex Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "ibmplex-mono-blex-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"BlexMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IBMPlexMono/Mono/BlexMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "ibmplex-mono-blex-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"BlexMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IBMPlexMono/Mono/BlexMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ibmplex-mono-blex-mono-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"BlexMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IBMPlexMono/Mono/BlexMonoNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ibmplex-mono-blex-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"BlexMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IBMPlexMono/Mono/BlexMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "inconsolata",
+      "name": "Inconsolata",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "inconsolata-inconsolata-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Inconsolata Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Inconsolata/InconsolataNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "inconsolata-inconsolata-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Inconsolata Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Inconsolata/InconsolataNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "inconsolata-go",
+      "name": "Inconsolata Go",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "inconsolata-go-inconsolata-go-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"InconsolataGo Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataGo/Regular/InconsolataGoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "inconsolata-go-inconsolata-go-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"InconsolataGo Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataGo/Bold/InconsolataGoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "inconsolata-lgc",
+      "name": "Inconsolata LGC",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "inconsolata-lgc-inconsolata-lgcnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"InconsolataLGC Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataLGC/InconsolataLGCNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "inconsolata-lgc-inconsolata-lgcnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"InconsolataLGC Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataLGC/InconsolataLGCNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "inconsolata-lgc-inconsolata-lgcnerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"InconsolataLGC Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataLGC/InconsolataLGCNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "inconsolata-lgc-inconsolata-lgcnerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"InconsolataLGC Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/InconsolataLGC/InconsolataLGCNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "iosevka",
+      "name": "Iosevka",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "iosevka-iosevka-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Iosevka Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/IosevkaNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "iosevka-iosevka-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Iosevka Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/IosevkaNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "iosevka-iosevka-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"Iosevka Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/IosevkaNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "iosevka-iosevka-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Iosevka Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Iosevka/IosevkaNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "iosevka-term",
+      "name": "Iosevka Term",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "iosevka-term-iosevka-term-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"IosevkaTerm Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "iosevka-term-iosevka-term-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"IosevkaTerm Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "iosevka-term-iosevka-term-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"IosevkaTerm Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "iosevka-term-iosevka-term-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"IosevkaTerm Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/IosevkaTerm/IosevkaTermNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "jet-brains-mono",
+      "name": "Jet Brains Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "jet-brains-mono-jet-brains-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"JetBrainsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/JetBrainsMono/Ligatures/Regular/JetBrainsMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "jet-brains-mono-jet-brains-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"JetBrainsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/JetBrainsMono/Ligatures/Bold/JetBrainsMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "jet-brains-mono-jet-brains-mono-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"JetBrainsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/JetBrainsMono/Ligatures/ExtraLightItalic/JetBrainsMonoNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "jet-brains-mono-jet-brains-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"JetBrainsMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/JetBrainsMono/Ligatures/BoldItalic/JetBrainsMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "lekton",
+      "name": "Lekton",
+      "description": "来自 Nerd Fonts 完整目录，包含 3 个变体。",
+      "variants": [
+        {
+          "id": "lekton-lekton-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Lekton Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lekton/Regular/LektonNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "lekton-lekton-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Lekton Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lekton/Bold/LektonNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "lekton-lekton-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Lekton Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lekton/Italic/LektonNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "liberation-mono",
+      "name": "Liberation Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "liberation-mono-literation-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"LiterationMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/LiberationMono/LiterationMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "liberation-mono-literation-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"LiterationMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/LiberationMono/LiterationMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "liberation-mono-literation-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"LiterationMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/LiberationMono/LiterationMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "liberation-mono-literation-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"LiterationMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/LiberationMono/LiterationMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "lilex",
+      "name": "Lilex",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "lilex-lilex-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Lilex Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lilex/LilexNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "lilex-lilex-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Lilex Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lilex/LilexNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "lilex-lilex-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"Lilex Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lilex/LilexNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "lilex-lilex-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Lilex Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Lilex/LilexNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "mplus",
+      "name": "M Plus",
+      "description": "来自 Nerd Fonts 完整目录，包含 2 个变体。",
+      "variants": [
+        {
+          "id": "mplus-m-1-code-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"M+1Code Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/MPlus/M_Plus_1_code/M%2B1CodeNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "mplus-m-1-code-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"M+1Code Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/MPlus/M_Plus_1_code/M%2B1CodeNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "meslo",
+      "name": "Meslo",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "meslo-meslo-lgldznerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"MesloLGLDZ Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Meslo/L-DZ/Regular/MesloLGLDZNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "meslo-meslo-lgldznerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"MesloLGLDZ Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Meslo/L-DZ/Bold/MesloLGLDZNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "meslo-meslo-lgldznerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"MesloLGLDZ Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Meslo/L-DZ/Italic/MesloLGLDZNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "meslo-meslo-lgldznerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"MesloLGLDZ Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Meslo/L-DZ/Bold-Italic/MesloLGLDZNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "monofur",
+      "name": "Monofur",
+      "description": "来自 Nerd Fonts 完整目录，包含 3 个变体。",
+      "variants": [
+        {
+          "id": "monofur-monofur-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Monofur Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monofur/Regular/MonofurNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "monofur-monofur-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Monofur Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monofur/Bold/MonofurNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "monofur-monofur-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Monofur Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monofur/Italic/MonofurNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "monoid",
+      "name": "Monoid",
+      "description": "来自 Nerd Fonts 完整目录，包含 3 个变体。",
+      "variants": [
+        {
+          "id": "monoid-monoid-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Monoid Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monoid/Regular/MonoidNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "monoid-monoid-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Monoid Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monoid/Bold/MonoidNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "monoid-monoid-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Monoid Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Monoid/Italic/MonoidNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "mononoki",
+      "name": "Mononoki",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "mononoki-mononoki-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Mononoki Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Mononoki/Regular/MononokiNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "mononoki-mononoki-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Mononoki Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Mononoki/Bold/MononokiNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "mononoki-mononoki-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Mononoki Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Mononoki/Italic/MononokiNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "mononoki-mononoki-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Mononoki Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Mononoki/Bold-Italic/MononokiNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "nerd-fonts-symbols-only",
+      "name": "Nerd Fonts Symbols Only",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "nerd-fonts-symbols-only-symbols-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Symbols Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "noto",
+      "name": "Noto",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "noto-noto-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"NotoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Noto/Mono/NotoMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "noto-noto-sans-mnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"NotoSansM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Noto/Sans-Mono/NotoSansMNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "noto-noto-sans-nerd-font-black-italic",
+          "label": "Italic",
+          "fontFamily": "\"NotoSans Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Noto/Sans/NotoSansNerdFont-BlackItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "noto-noto-sans-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"NotoSans Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Noto/Sans/NotoSansNerdFont-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "open-dyslexic",
+      "name": "Open Dyslexic",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "open-dyslexic-open-dyslexic-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"OpenDyslexicM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/OpenDyslexic/Mono-Regular/OpenDyslexicMNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "open-dyslexic-open-dyslexic-alt-nerd-font-bold",
+          "label": "Bold",
+          "fontFamily": "\"OpenDyslexicAlt Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/OpenDyslexic/Alta-Bold/OpenDyslexicAltNerdFont-Bold.otf",
+          "format": "otf"
+        },
+        {
+          "id": "open-dyslexic-open-dyslexic-alt-nerd-font-italic",
+          "label": "Italic",
+          "fontFamily": "\"OpenDyslexicAlt Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/OpenDyslexic/Alta-Italic/OpenDyslexicAltNerdFont-Italic.otf",
+          "format": "otf"
+        },
+        {
+          "id": "open-dyslexic-open-dyslexic-alt-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"OpenDyslexicAlt Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/OpenDyslexic/Alta-Bold-Italic/OpenDyslexicAltNerdFont-BoldItalic.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "overpass",
+      "name": "Overpass",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "overpass-overpass-mnerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"OverpassM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Overpass/Mono/Regular/OverpassMNerdFontMono-Regular.otf",
+          "format": "otf",
+          "recommended": true
+        },
+        {
+          "id": "overpass-overpass-mnerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"OverpassM Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Overpass/Mono/Bold/OverpassMNerdFontMono-Bold.otf",
+          "format": "otf"
+        },
+        {
+          "id": "overpass-overpass-nerd-font-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"Overpass Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Overpass/Non-Mono/Extra-Light-Italic/OverpassNerdFont-ExtraLightItalic.otf",
+          "format": "otf"
+        },
+        {
+          "id": "overpass-overpass-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Overpass Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Overpass/Non-Mono/Bold-Italic/OverpassNerdFont-BoldItalic.otf",
+          "format": "otf"
+        }
+      ]
+    },
+    {
+      "id": "pro-font",
+      "name": "Pro Font",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "pro-font-pro-font-iix-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"ProFontIIx Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ProFont/profontiix/ProFontIIxNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "proggy-clean",
+      "name": "Proggy Clean",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "proggy-clean-proggy-clean-cenerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"ProggyCleanCE Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ProggyClean/Latin2/ProggyCleanCENerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "roboto-mono",
+      "name": "Roboto Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "roboto-mono-roboto-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"RobotoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Regular/RobotoMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "roboto-mono-roboto-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"RobotoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold/RobotoMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "roboto-mono-roboto-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"RobotoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Italic/RobotoMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "roboto-mono-roboto-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"RobotoMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/RobotoMono/Bold-Italic/RobotoMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "share-tech-mono",
+      "name": "Share Tech Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 1 个变体。",
+      "variants": [
+        {
+          "id": "share-tech-mono-shure-tech-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"ShureTechMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/ShareTechMono/ShureTechMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        }
+      ]
+    },
+    {
+      "id": "source-code-pro",
+      "name": "Source Code Pro",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "source-code-pro-sauce-code-pro-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"SauceCodePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "source-code-pro-sauce-code-pro-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"SauceCodePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "source-code-pro-sauce-code-pro-nerd-font-mono-black-italic",
+          "label": "Italic",
+          "fontFamily": "\"SauceCodePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-BlackItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "source-code-pro-sauce-code-pro-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"SauceCodePro Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/SauceCodeProNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "space-mono",
+      "name": "Space Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "space-mono-space-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"SpaceMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SpaceMono/Regular/SpaceMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "space-mono-space-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"SpaceMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SpaceMono/Bold/SpaceMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "space-mono-space-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"SpaceMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SpaceMono/Italic/SpaceMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "space-mono-space-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"SpaceMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/SpaceMono/Bold-Italic/SpaceMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "terminus",
+      "name": "Terminus",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "terminus-terminess-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"Terminess Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Terminus/TerminessNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "terminus-terminess-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"Terminess Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Terminus/TerminessNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "terminus-terminess-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"Terminess Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Terminus/TerminessNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "terminus-terminess-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Terminess Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Terminus/TerminessNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "tinos",
+      "name": "Tinos",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "tinos-tinos-nerd-font-regular",
+          "label": "Regular",
+          "fontFamily": "\"Tinos Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Tinos/Regular/TinosNerdFont-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "tinos-tinos-nerd-font-bold",
+          "label": "Bold",
+          "fontFamily": "\"Tinos Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Tinos/Bold/TinosNerdFont-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "tinos-tinos-nerd-font-italic",
+          "label": "Italic",
+          "fontFamily": "\"Tinos Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Tinos/Italic/TinosNerdFont-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "tinos-tinos-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Tinos Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Tinos/Bold-Italic/TinosNerdFont-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "ubuntu",
+      "name": "Ubuntu",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "ubuntu-ubuntu-nerd-font-regular",
+          "label": "Regular",
+          "fontFamily": "\"Ubuntu Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Ubuntu/Regular/UbuntuNerdFont-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "ubuntu-ubuntu-nerd-font-bold",
+          "label": "Bold",
+          "fontFamily": "\"Ubuntu Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Ubuntu/Bold/UbuntuNerdFont-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ubuntu-ubuntu-nerd-font-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"Ubuntu Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Ubuntu/Light-Italic/UbuntuNerdFont-LightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ubuntu-ubuntu-nerd-font-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"Ubuntu Nerd Font\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/Ubuntu/Bold-Italic/UbuntuNerdFont-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "ubuntu-mono",
+      "name": "Ubuntu Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "ubuntu-mono-ubuntu-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"UbuntuMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "ubuntu-mono-ubuntu-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"UbuntuMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/UbuntuMono/Bold/UbuntuMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ubuntu-mono-ubuntu-mono-nerd-font-mono-italic",
+          "label": "Italic",
+          "fontFamily": "\"UbuntuMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/UbuntuMono/Regular-Italic/UbuntuMonoNerdFontMono-Italic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "ubuntu-mono-ubuntu-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"UbuntuMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/UbuntuMono/Bold-Italic/UbuntuMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    },
+    {
+      "id": "victor-mono",
+      "name": "Victor Mono",
+      "description": "来自 Nerd Fonts 完整目录，包含 4 个变体。",
+      "variants": [
+        {
+          "id": "victor-mono-victor-mono-nerd-font-mono-regular",
+          "label": "Regular",
+          "fontFamily": "\"VictorMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/VictorMono/Regular/VictorMonoNerdFontMono-Regular.ttf",
+          "format": "ttf",
+          "recommended": true
+        },
+        {
+          "id": "victor-mono-victor-mono-nerd-font-mono-bold",
+          "label": "Bold",
+          "fontFamily": "\"VictorMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/VictorMono/Bold/VictorMonoNerdFontMono-Bold.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "victor-mono-victor-mono-nerd-font-mono-extra-light-italic",
+          "label": "Italic",
+          "fontFamily": "\"VictorMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/VictorMono/Extra-Light-Italic/VictorMonoNerdFontMono-ExtraLightItalic.ttf",
+          "format": "ttf"
+        },
+        {
+          "id": "victor-mono-victor-mono-nerd-font-mono-bold-italic",
+          "label": "BoldItalic",
+          "fontFamily": "\"VictorMono Nerd Font Mono\", monospace",
+          "url": "https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/VictorMono/Bold-Italic/VictorMonoNerdFontMono-BoldItalic.ttf",
+          "format": "ttf"
+        }
+      ]
+    }
+  ]
+}
