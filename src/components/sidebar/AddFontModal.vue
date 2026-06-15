@@ -2,10 +2,7 @@
 import { computed, ref, watch, nextTick } from 'vue';
 import { store } from '../../store';
 import { addFontFromUrl, addFontFromFile, addRemoteNerdFont } from '../../services/customFonts';
-import {
-  fetchNerdFontsCatalog,
-  loadCachedNerdFontsCatalog,
-} from '../../services/nerdFontsCatalog';
+import { loadStaticNerdFontsCatalog } from '../../services/nerdFontsCatalog';
 import { nerdFonts, type NerdFontMeta, type NerdFontVariant } from '../../data/nerdFonts';
 
 const props = defineProps<{
@@ -28,10 +25,9 @@ const nerdfontSearch = ref('');
 const nerdLoading = ref(false);
 const nerdError = ref('');
 const nerdCatalogFonts = ref<NerdFontMeta[]>([]);
-const nerdCatalogLoading = ref(false);
-const nerdCatalogError = ref('');
+const nerdCatalogLoaded = ref(false);
 const expandedNerdFontIds = ref<string[]>([]);
-const isBusy = computed(() => loading.value || nerdLoading.value || nerdCatalogLoading.value);
+const isBusy = computed(() => loading.value || nerdLoading.value);
 const hasFullNerdCatalog = computed(() => nerdCatalogFonts.value.length > 0);
 const activeNerdFonts = computed(() => hasFullNerdCatalog.value ? nerdCatalogFonts.value : nerdFonts);
 
@@ -54,12 +50,10 @@ watch(() => props.show, async (val) => {
     nameInput.value = '';
     error.value = '';
     nerdfontSearch.value = '';
-    nerdError.value = '';
-    nerdCatalogError.value = '';
     loading.value = false;
     nerdLoading.value = false;
-    nerdCatalogLoading.value = false;
-    restoreCachedNerdCatalog();
+    nerdError.value = '';
+    await ensureNerdCatalogLoaded();
     await nextTick();
     urlInputRef.value?.focus();
   }
@@ -76,27 +70,16 @@ function setActiveTab(tab: 'url' | 'file' | 'nerd') {
   error.value = '';
   nerdError.value = '';
   if (tab === 'nerd') {
-    nerdCatalogError.value = '';
-    restoreCachedNerdCatalog();
+    void ensureNerdCatalogLoaded();
   }
 }
 
-function restoreCachedNerdCatalog() {
-  if (nerdCatalogFonts.value.length > 0) return;
-  const cached = loadCachedNerdFontsCatalog();
-  if (cached) nerdCatalogFonts.value = cached;
-}
-
-async function loadFullNerdCatalog() {
-  if (isBusy.value) return;
-  nerdCatalogError.value = '';
-  nerdCatalogLoading.value = true;
-  try {
-    nerdCatalogFonts.value = await fetchNerdFontsCatalog();
-  } catch {
-    nerdCatalogError.value = '完整目录加载失败，已保留推荐列表，可稍后重试。';
-  } finally {
-    nerdCatalogLoading.value = false;
+async function ensureNerdCatalogLoaded() {
+  if (nerdCatalogLoaded.value) return;
+  nerdCatalogLoaded.value = true;
+  const fonts = await loadStaticNerdFontsCatalog();
+  if (fonts && fonts.length > 0) {
+    nerdCatalogFonts.value = fonts;
   }
 }
 
@@ -290,15 +273,11 @@ async function handleImport() {
               placeholder="搜索字体名称或简介"
               :disabled="isBusy"
             />
-            <div class="nerd-catalog-bar">
-              <span class="nerd-catalog-status">
-                {{ hasFullNerdCatalog ? `完整目录 · ${activeNerdFonts.length} 个家族` : '当前显示推荐字体' }}
-              </span>
-              <button class="nerd-catalog-btn" :disabled="isBusy" @click="loadFullNerdCatalog">
-                {{ nerdCatalogLoading ? '加载中...' : hasFullNerdCatalog ? '刷新目录' : '加载完整目录' }}
-              </button>
-            </div>
-            <p v-if="nerdCatalogError" class="field-hint error-hint">{{ nerdCatalogError }}</p>
+            <p class="field-hint nerd-catalog-status">
+              {{ hasFullNerdCatalog
+                ? `完整目录 · ${activeNerdFonts.length} 个家族`
+                : '当前为推荐字体列表（完整目录加载失败）' }}
+            </p>
             <div class="nerd-font-list">
               <div
                 v-for="font in filteredNerdFonts"
@@ -484,53 +463,10 @@ async function handleImport() {
   white-space: pre-wrap;
 }
 
-.error-hint {
-  color: #d95b5b;
-}
-
-.nerd-catalog-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 8px 10px;
-  border: 2px solid #efe5ce;
-  border-radius: 14px;
-  background: #fffdf7;
-}
-
 .nerd-catalog-status {
   color: #8d7a5b;
   font-size: 11px;
   font-weight: 600;
-}
-
-.nerd-catalog-btn {
-  flex-shrink: 0;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 50px;
-  background: #19c8b9;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  font-family: inherit;
-}
-
-.nerd-catalog-btn:hover:not(:disabled) {
-  background: #15b0a3;
-}
-
-.nerd-catalog-btn:focus-visible {
-  outline: 2px solid #ffcc00;
-  outline-offset: 2px;
-}
-
-.nerd-catalog-btn:disabled {
-  opacity: 0.55;
-  cursor: not-allowed;
 }
 
 .nerd-font-list {
