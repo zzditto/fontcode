@@ -332,3 +332,7 @@ npm run build
 - 默认只展示家族与推荐变体，展开后显示完整变体。
 - 使用混合方案：内置推荐 + 在线全量刷新。
 - 使用 `localStorage` 缓存目录索引。
+
+---
+
+> **更新（2026-06-15）：** 本设计因 GitHub REST API 60/h 限速在生产中频繁失败，已被 [`2026-06-15-nerd-fonts-static-catalog-design.md`](./2026-06-15-nerd-fonts-static-catalog-design.md) 取代。当前实现为构建期生成静态 JSON + 运行时 dynamic import。

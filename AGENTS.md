@@ -39,6 +39,7 @@ src/
 - 本地字体文件应放在 `public/fonts/` 目录，在 `src/styles/fonts.css` 中注册。
 - 新增字体需同时更新 `src/data/fonts.ts` 并在 `index.html` 中添加 Google Fonts `<link>`。
 - 新增语言需注册对应 Prism 语言组件（`src/components/content/CodePreview.vue:4-8`）。
+- Nerd Fonts 完整目录由 `npm run gen:nerd-fonts` 生成 `src/data/nerd-fonts-catalog.generated.json` 并 commit；运行时通过 dynamic import 加载，不再调用 GitHub REST API。需更新目录时手动重跑脚本，必要时设置 `GITHUB_TOKEN` 环境变量提升额度。
 
 ## 环境说明
 
